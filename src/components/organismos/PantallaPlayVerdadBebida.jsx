@@ -1,24 +1,33 @@
-import styled from "styled-components";
-import { Btn1 } from "../moleculas/Btn1";
-import { v } from "../../styles/variables";
+import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { Carousel } from "./Carousel";
-import { Datapreguntas } from "../../utils/dataEstatica";
+import styled from "styled-components";
 import { useNivelesStore } from "../../store/NivelesStore";
 import { usePreguntasStore } from "../../store/PreguntasStore";
-import { useQuery } from "@tanstack/react-query";
+import { v } from "../../styles/variables";
+import { Btn1 } from "../moleculas/Btn1";
+import { Carousel } from "./Carousel";
 export function PantallaPlayVerdadBebida({ setState }) {
   const [stateAnimacion, setStateAnimacion] = useState(true);
 
   const { nivelesItemSelect } = useNivelesStore();
-  const { mostrarpreguntasxidnivel, preguntaItemSelect,chocolatear } = usePreguntasStore();
-  const { isLoading, error } = useQuery({
-    queryKey: ["mostrar preguntas x Id nivel", nivelesItemSelect.id],
-    queryFn: () => mostrarpreguntasxidnivel({ id_nivel: nivelesItemSelect.id }),
+  const { mostrarpreguntasxidnivel, preguntaItemSelect, chocolatear } =
+    usePreguntasStore();
+  const {
+    data: preguntas,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["mostrar-preguntas-x-id-level", nivelesItemSelect?.id],
+    queryFn: () => mostrarpreguntasxidnivel({ id_level: nivelesItemSelect.id }),
+    enabled: !!nivelesItemSelect?.id,
   });
+
+  console.log(nivelesItemSelect);
+
   if (error) {
     return <span>error...{error.message}</span>;
   }
+
   return (
     <Container>
       <section className="play">
@@ -29,15 +38,15 @@ export function PantallaPlayVerdadBebida({ setState }) {
           width="220px"
           color1={nivelesItemSelect.color_1}
           color2={nivelesItemSelect.color_2}
-          texto={nivelesItemSelect.nombre}
+          texto={nivelesItemSelect.name}
         />
 
         <Carousel
           stateAnimacion={stateAnimacion}
-          text={preguntaItemSelect?.pregunta}
+          text={preguntaItemSelect?.question}
           bgcolor1={nivelesItemSelect.color_1}
           bgcolor2={nivelesItemSelect.color_2}
-          icono={nivelesItemSelect.icono}
+          icono={nivelesItemSelect.icon}
         />
 
         <Btn1

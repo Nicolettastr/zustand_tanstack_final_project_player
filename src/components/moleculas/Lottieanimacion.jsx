@@ -1,5 +1,5 @@
+import Lottie from "lottie-react";
 import styled from "styled-components";
-import Lottie from "react-lottie";
 export function Lottieanimacion({ alto, ancho, animacion }) {
   const defaultOptions = {
     loop: true,
@@ -12,7 +12,7 @@ export function Lottieanimacion({ alto, ancho, animacion }) {
         options={defaultOptions}
         height={`${alto}px`}
         width={`${ancho}px`}
-        isClickToPauseDisabled
+        isClickToPauseDisabled={false}
       />
     </Container>
   );

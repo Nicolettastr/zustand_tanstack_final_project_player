@@ -4,22 +4,20 @@ import { Device } from "../../styles/breakpoints";
 
 import { Btn1 } from "../moleculas/Btn1";
 
-
-import { useRef } from "react";
-import { flotararriba } from "../../styles/keyframes";
 import { Icon } from "@iconify/react";
-import { Lottieanimacion } from "../moleculas/Lottieanimacion";
-import beer from "../../assets/beer.json";
-import { PowerBy } from "../moleculas/PowerBy";
-import { DataNivelesverdadbebida } from "../../utils/dataEstatica";
-import { Spinner1, useNivelesStore } from "../../index";
 import { useQuery } from "@tanstack/react-query";
+import { useRef } from "react";
+import beer from "../../assets/beer.json";
+import { Spinner1, useNivelesStore } from "../../index";
+import { flotararriba } from "../../styles/keyframes";
+import { Lottieanimacion } from "../moleculas/Lottieanimacion";
 export function BannerHome({ setState }) {
   const elementRef = useRef(null);
-  const {mostrarNiveles,selectNiveles} = useNivelesStore()
-  const {data,isLoading,error} = useQuery({
-    queryKey:"mostrar niveles",queryFn:mostrarNiveles
-  })
+  const { mostrarNiveles, selectNiveles } = useNivelesStore();
+  const { data, isLoading, error } = useQuery({
+    queryKey: "mostrar niveles",
+    queryFn: mostrarNiveles,
+  });
 
   const expandToFullScreen = () => {
     const element = elementRef.current;
@@ -36,50 +34,47 @@ export function BannerHome({ setState }) {
       }
     }
   };
- 
 
   const seleccionar = (p) => {
     selectNiveles(p);
     setState();
     expandToFullScreen();
   };
- 
-  if (error){
-    return <span>error.. {error.message}</span>
+
+  if (error) {
+    return <span>error.. {error.message}</span>;
   }
   return (
     <Container ref={elementRef}>
-     
       <div className="subcontainer">
         <Lottieanimacion animacion={beer} alto="300" />
         <div className="titulo principal">
-          <span>VERDAD</span>
-          <span>o</span>
-          <span className="bebida">BEBIDA</span>
+          <span>Spark</span>
+          <span className="bebida">Quizz</span>
         </div>
         <Contentselect>
           <span className="titulo">Selecciona un MODO</span>
-          <Icon className="iconofuego" icon="fluent-emoji:eggplant" />
-          <PowerBy />
+          <Icon className="iconofuego" icon="fluent-emoji:exploding-head" />
         </Contentselect>
         <section className="contentniveles">
-          {
-            isLoading?(<Spinner1/>):( data.map((item, index) => {
+          {isLoading ? (
+            <Spinner1 />
+          ) : (
+            data.map((item, index) => {
               return (
                 <Btn1
                   icono={item.icono}
                   color="rgba(0, 0, 0,0.5)"
                   key={index}
-                  texto={item.nombre}
+                  texto={item.name}
                   width="220px"
                   funcion={() => seleccionar(item)}
                   color1={item.color_1}
                   color2={item.color_2}
                 />
               );
-            }))
-          }
-         
+            })
+          )}
         </section>
       </div>
     </Container>

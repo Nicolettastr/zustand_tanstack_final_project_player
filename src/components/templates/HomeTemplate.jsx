@@ -1,18 +1,18 @@
-import styled from "styled-components";
-import { BannerHome, PantallaPlayVerdadBebida } from "../../index";
 import { useState } from "react";
-import { flotararriba } from "../../styles/keyframes";
+import styled from "styled-components";
 import fondo from "../../assets/pattern-1.svg";
+import { BannerHome, PantallaPlayVerdadBebida } from "../../index";
+import { flotararriba } from "../../styles/keyframes";
 export function HomeTemplate() {
   const [state, setState] = useState(true);
-  
+
   return (
     <Main>
       <Sombra />
       {state ? (
-        <BannerHome  setState={() => setState(!state)} />
+        <BannerHome setState={() => setState(!state)} />
       ) : (
-        <PantallaPlayVerdadBebida  setState={() => setState(!state)} />
+        <PantallaPlayVerdadBebida setState={() => setState(!state)} />
       )}
     </Main>
   );
@@ -34,11 +34,10 @@ const Main = styled.main`
     position: absolute;
     content: "";
     svg {
-      path{
+      path {
         color: red;
-      fill: red;
+        fill: red;
       }
-      
     }
 
     background-size: 600px 600px, cover;
