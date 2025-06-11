@@ -1,7 +1,5 @@
-import styled from "styled-components";
-import { Device } from "../../styles/breakpoints";
-import { disable } from "workbox-navigation-preload";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import styled from "styled-components";
 export function Btn1({
   texto,
   color1,
@@ -12,10 +10,13 @@ export function Btn1({
   width,
   icono,
   funcion,
-  disabled,color,index
+  disabled,
+  color,
+  index,
 }) {
   return (
-    <Container key={index}
+    <Container
+      key={index}
       disabled={disabled}
       onClick={funcion}
       $width={width}
@@ -33,9 +34,8 @@ export function Btn1({
   );
 }
 
-
 const Container = styled.button`
-text-transform:uppercase;
+  text-transform: uppercase;
   font-weight: 700;
   display: flex;
   font-size: 15px;
@@ -52,12 +52,12 @@ text-transform:uppercase;
   justify-content: center;
   width: ${(props) => props.$width};
   height: ${(props) => props.$height};
-  overflow:hidden;
+  overflow: hidden;
   background-image: linear-gradient(
-     222deg,
-   ${(props) => props.$color1} 0%,
-     ${(props) => props.$color2} 100%
-   );
+    222deg,
+    ${(props) => props.$color1} 0%,
+    ${(props) => props.$color2} 100%
+  );
   &::before {
     content: "";
     display: ${(props) => props.$decorador};
@@ -83,8 +83,8 @@ text-transform:uppercase;
     cursor: no-drop;
     box-shadow: none;
   }
-  gap:5px;
-  .icono{
- font-size:2rem;
+  gap: 5px;
+  .icono {
+    font-size: 5rem;
   }
 `;

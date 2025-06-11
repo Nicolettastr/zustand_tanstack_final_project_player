@@ -41,6 +41,8 @@ export function BannerHome({ setState }) {
     expandToFullScreen();
   };
 
+  console.log("data", data);
+
   if (error) {
     return <span>error.. {error.message}</span>;
   }
@@ -63,7 +65,7 @@ export function BannerHome({ setState }) {
             data.map((item, index) => {
               return (
                 <Btn1
-                  icono={item.icono}
+                  icono={item.icon}
                   color="rgba(0, 0, 0,0.5)"
                   key={index}
                   texto={item.name}
