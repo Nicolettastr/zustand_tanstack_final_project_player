@@ -15,7 +15,7 @@ export function BannerHome({ setState }) {
   const elementRef = useRef(null);
   const { mostrarNiveles, selectNiveles } = useNivelesStore();
   const { data, isLoading, error } = useQuery({
-    queryKey: "mostrar niveles",
+    queryKey: ["mostrar niveles"],
     queryFn: mostrarNiveles,
   });
 
@@ -41,8 +41,6 @@ export function BannerHome({ setState }) {
     expandToFullScreen();
   };
 
-  console.log("data", data);
-
   if (error) {
     return <span>error.. {error.message}</span>;
   }
@@ -62,7 +60,7 @@ export function BannerHome({ setState }) {
           {isLoading ? (
             <Spinner1 />
           ) : (
-            data.map((item, index) => {
+            data?.map((item, index) => {
               return (
                 <Btn1
                   icono={item.icon}

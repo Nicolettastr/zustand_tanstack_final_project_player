@@ -12,7 +12,6 @@ export function Lottieanimacion({ alto, ancho, animacion }) {
         options={defaultOptions}
         height={`${alto}px`}
         width={`${ancho}px`}
-        isClickToPauseDisabled={false}
       />
     </Container>
   );
