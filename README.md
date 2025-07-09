@@ -43,8 +43,8 @@ Repositorio: [https://github.com/Nicolettastr/zustand_tanstack_final_project_pla
    git clone https://github.com/Nicolettastr/zustand_tanstack_final_project_player.git
 
 2. npm install
-3. VITE_SUPABASE_URL=https://xxxxx.supabase.co
-VITE_SUPABASE_ANON_KEY=your-anon-key
+3. VITE_APP_SUPABASE_URL=https://xxxxx.supabase.co
+VITE_APP_SUPABASE_ANON_KEY=your-anon-key
 
 4.npm run dev
 
