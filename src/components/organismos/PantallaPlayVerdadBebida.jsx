@@ -64,46 +64,6 @@ export function PantallaPlayVerdadBebida({ setState }) {
           texto="Siguiente pregunta"
         />
       </section>
-      <section className="tutorial" id="tutorial">
-        <span className="titulo">Cómo jugar a “Verdad o bebida”</span>
-        <p>
-          Verdad o bebida puede ser jugado por 2 o más personas. Tomad turnos
-          para obtener una pregunta al azar que leeréis a la otra persona. La
-          otra persona debe responder a la pregunta con la verdad o se dispara.
-        </p>
-        <span className="titulo"> Qué es Verdad o bebida?</span>
-        <p>
-          Aunque Verdad o bebida puede ser jugado por dos personas, también
-          funciona excepcionalmente bien cuando lo juega un grupo. Es una forma
-          estupenda de romper el hielo y hacer que la gente se relaje!
-        </p>
-        <span className="titulo"> Versión online de “Verdad o bebida”</span>
-        <p>
-          En la versión online gratuita de{" "}
-          <span className="textopintado">“Verdad o bebida”</span> , puedes
-          elegir entre 4 categorías diferentes:
-        </p>
-        <span className="subtitulo">Modo normal</span>
-        <p>
-          Este es el modo casual para empezar. Sólo preguntas divertidas para
-          averiguar cosas sobre los demás. También es seguro para el trabajo!
-        </p>
-        <span className="subtitulo">Modo fiesta</span>
-        <p>
-          El modo Fiesta de Verdad o bebida es perfecto para compartir algunas
-          historias de fiestas salvajes mientras se es amable con los demás.
-        </p>
-        <span className="subtitulo">Modo puerco</span>
-        <p>
-          El título lo dice todo. Preguntas picantes y definitivamente NSFW (no
-          seguro para el trabajo)!
-        </p>
-        <span className="subtitulo">Modo íntimo</span>
-        <p>
-          Para los buenos amigos y las parejas. Estas preguntas pondrán a prueba
-          tus relaciones.
-        </p>
-      </section>
     </Container>
   );
 }
