@@ -20,9 +20,9 @@ Repositorio: [https://github.com/Nicolettastr/zustand_tanstack_final_project_pla
 
 ## ⚠️ Nota importante
 
-> Debido al uso gratuito y ocasional del servicio, **Supabase puede entrar en modo de suspensión ("cold start")**.  
-> Si el proyecto parece no cargar correctamente al principio, espera unos segundos o recarga la página para reactivar el backend.
-
+Este proyecto utiliza Supabase en su plan gratuito.
+Si la aplicación no se usa durante un tiempo, la instancia de Supabase entra en modo de suspensión.
+En ese caso, es necesario reactivar manualmente el proyecto desde la consola de Supabase para que vuelva a estar disponible.
 ---
 
 ## 🧩 Funcionalidades
